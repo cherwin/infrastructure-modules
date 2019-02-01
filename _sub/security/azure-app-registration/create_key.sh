@@ -6,7 +6,10 @@ set -e
 CREATE_KEY=0
 APPLICATION_ID=$1
 KEY_PATH_S3=$2
+CONFIG_DIR=$3
 
+# Set config-dir
+export AZURE_CONFIG_DIR="$HOME/.azure-$CONFIG_DIR"
 
 # Login to Azure
 az login --service-principal --username $ARM_CLIENT_ID --password $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID > /dev/null

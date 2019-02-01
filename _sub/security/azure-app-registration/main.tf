@@ -17,7 +17,7 @@ resource "null_resource" "new_appreg_key" {
     }
 
     provisioner "local-exec" {
-         command = "${path.module}/create_key.sh ${azuread_application.app.application_id} s3://${var.appreg_key_bucket}/${var.appreg_key_key}"
+         command = "${path.module}/create_key.sh ${azuread_application.app.application_id} s3://${var.appreg_key_bucket}/${var.appreg_key_key} ${var.cluster_name}"
     }
 
 }

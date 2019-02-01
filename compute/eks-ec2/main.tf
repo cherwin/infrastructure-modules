@@ -64,6 +64,7 @@ module "eks_alb" {
 module "azure_app_registration" {
   source            = "../../_sub/security/azure-app-registration"
   name              = "Kubernetes EKS ${var.cluster_name}.${var.dns_zone_name}"
+  cluster_name      = "${var.cluster_name}"
   homepage          = "https://${var.cluster_name}.${var.dns_zone_name}"
   identifier_uris   = ["https://${var.cluster_name}.${var.dns_zone_name}"]
   reply_urls        = ["https://internal.${var.cluster_name}.${var.dns_zone_name}/oauth2/idpresponse"]

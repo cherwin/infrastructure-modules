@@ -27,3 +27,7 @@ variable "appreg_key_bucket" {
 variable "appreg_key_key" {
     description = "The path and file name of the key file in the S3 bucket"
 }
+
+variable "cluster_name" {
+    description = "Name of the cluster. Used to initialize different Azure CLI config-dirs"
+}
